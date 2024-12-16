@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -126.8, "left": -86.4, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": 355.7,
+      "left": -146.7,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic2",
+      "top": 355.7,
+      "left": 218.1,
+      "rotate": 180,
+      "attrs": { "distance": "35" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic3",
+      "top": 355.7,
+      "left": 35.7,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": -71,
+      "left": -403,
+      "rotate": 270,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:TRIG", "esp:26", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:27", "green", [ "v-220.8", "h58.4", "v-9.6" ] ],
+    [ "ultrasonic3:TRIG", "esp:14", "green", [ "v-19.2", "h-162.8", "v-192" ] ],
+    [ "ultrasonic3:ECHO", "esp:12", "green", [ "v-28.8", "h-133.6", "v-182.4" ] ],
+    [ "ultrasonic2:TRIG", "esp:18", "green", [ "v-19.2", "h-182", "v-230.4" ] ],
+    [ "ultrasonic2:ECHO", "esp:19", "green", [ "v-38.4", "h-162.4", "v-220.8" ] ],
+    [ "esp:5V", "ultrasonic1:VCC", "red", [ "h-14.21", "v38.4", "h57.6", "v48", "h-96" ] ],
+    [ "ultrasonic3:VCC", "esp:5V", "red", [ "v-38.4", "h-134.4" ] ],
+    [ "ultrasonic2:VCC", "esp:5V", "red", [ "v-57.6", "h-307.2", "v-76.8" ] ],
+    [ "esp:GND.1", "ultrasonic1:GND", "black", [ "h-105.45", "v9.6" ] ],
+    [ "ultrasonic3:GND", "esp:GND.1", "black", [ "v-96", "h-190.8", "v-105.6" ] ],
+    [ "ultrasonic2:GND", "esp:GND.1", "black", [ "v-163.2", "h-373.2", "v-38.4" ] ],
+    [ "servo1:PWM", "esp:25", "green", [ "h9.6", "v153.8" ] ],
+    [ "servo1:V+", "esp:5V", "green", [ "h-38.4", "v268.9" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h-19.2", "v230.4" ] ],
+    [ "lcd2:SDA", "esp:21", "green", [ "v48", "h105.8", "v-364.8", "h278.4", "v249.6" ] ],
+    [ "esp:22", "lcd2:SCL", "green", [ "h48", "v-172.8", "h-297.6", "v345.6", "h-105.6" ] ],
+    [ "lcd2:VCC", "esp:5V", "red", [ "v105.6", "h153.7", "v-48" ] ],
+    [ "lcd2:GND", "esp:GND.1", "black", [ "v144", "h192", "v-134.4" ] ]
+  ],
+  "dependencies": {}
+}

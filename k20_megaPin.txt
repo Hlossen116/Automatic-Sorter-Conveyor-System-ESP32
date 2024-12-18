@@ -1,6 +1,15 @@
-TRIG_PIN_1: ESP32 (14) → Mega 2560 (30)
-ECHO_PIN_1: ESP32 (12) → Mega 2560 (32)
-TRIG_PIN_2: ESP32 (27) → Mega 2560 (34)
-ECHO_PIN_2: ESP32 (26) → Mega 2560 (36)
-LED_PIN: ESP32 (25) → Mega 2560 (38)
-SERVO_PIN: ESP32 (13) → Mega 2560 (40)
+Penyesuaian Pin untuk Arduino Mega 2560 Pro:
+
+    TRIG_PIN_1: ESP32 (14) → Mega 2560 (30)
+    ECHO_PIN_1: ESP32 (12) → Mega 2560 (32)
+    TRIG_PIN_2: ESP32 (27) → Mega 2560 (34)
+    ECHO_PIN_2: ESP32 (26) → Mega 2560 (36)
+    LED_PIN: ESP32 (25) → Mega 2560 (38)
+    SERVO_PIN: ESP32 (13) → Mega 2560 (40)
+
+LCD I2C Pin pada Arduino Mega 2560 Pro:
+
+Modul LCD I2C umumnya menggunakan dua pin:
+
+    SDA (Pin 20 pada Mega 2560)
+    SCL (Pin 21 pada Mega 2560)

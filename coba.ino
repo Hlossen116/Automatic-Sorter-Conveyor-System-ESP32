@@ -1,7 +1,6 @@
 #include <LiquidCrystal_I2C.h>
 
 #include <Wire.h>
-#include <LiquidCrystal_I2C.h>
 #include <ESP32Servo.h>
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
@@ -71,7 +70,7 @@ void loop() {
   if (distance_2 > 15) {
     lcd.clear();
     lcd.print("Kendaraan Tidak");
-    lcd.setCursor(0, 1);
+    lcd.setCursor(0, 0);
     lcd.print("Bisa Masuk");
     myServo.write(posisiTertutup); // Menutup palang
     digitalWrite(LED_PIN, HIGH); // Menyalakan LED
@@ -80,7 +79,7 @@ void loop() {
   else {
     lcd.clear();
     lcd.print("Kendaraan Bisa");
-    lcd.setCursor(0, 1);
+    lcd.setCursor(0, 0);
     lcd.print("Masuk");
     
     // Membaca jarak kendaraan dari sensor ultrasonik 1
